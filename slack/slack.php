@@ -38,7 +38,7 @@ class SlackPlugin extends Plugin {
 						);
 						
 			$data_string = utf8_encode(json_encode($payload));
-			$url = $this->getConfig()->get('slack-webhook-url');
+			$url = $this->getConfig()->get('slack-webhook-url' . $ticket->getDeptId());
 			 
 			$ch = curl_init($url);                                                                      			
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
